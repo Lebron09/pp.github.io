@@ -2470,3 +2470,195 @@ cite {
     from { box-shadow: 0 0 10px -5px #4facfe; }
     to { box-shadow: 0 0 15px 2px rgba(79, 172, 254, 0.6); }
 }
+/* Мобильные стили (до 768px) */
+@media screen and (max-width: 768px) {
+  /* Общие стили */
+  body {
+    font-size: 14px;
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  /* Шапка */
+  #header {
+    padding: 1rem;
+  }
+  
+  #header .logo {
+    width: 4rem;
+    height: 4rem;
+    line-height: 4rem;
+  }
+  
+  #header .content .inner {
+    padding: 1.5rem 0;
+  }
+
+  /* Навигация */
+  #header nav ul {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  #header nav ul li {
+    border-left: none;
+    border-top: 1px solid #ffffff;
+  }
+  
+  #header nav ul li:first-child {
+    border-top: none;
+  }
+
+  /* Основной контент */
+  #main article {
+    padding: 2rem 1rem;
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
+  }
+
+  /* Контакты */
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .contact-card {
+    padding: 1rem;
+  }
+  
+  .contact-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+    margin-right: 1rem;
+  }
+
+  /* Карта */
+  .map-container iframe {
+    min-height: 300px;
+  }
+  
+  .map-overlay {
+    padding: 1rem;
+  }
+
+  /* Кнопки */
+  .elegant-button, .cta-button {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.8rem;
+  }
+  
+  .call-buttons {
+    flex-direction: column;
+  }
+  
+  .call-button, .email-button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Анимации */
+  [data-aos] {
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* Специальные мобильные эффекты */
+  .symptom-item-clean {
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .symptom-icon {
+    font-size: 1.5rem;
+  }
+  
+  /* Фикс для iOS */
+  input, textarea, select {
+    font-size: 16px; /* Отключает зум при фокусе */
+  }
+  
+  /* Улучшение читаемости текста */
+  p, li {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  
+  /* Адаптивные заголовки */
+  h1 {
+    font-size: 1.8rem;
+    letter-spacing: 0.3rem;
+  }
+  
+  h2 {
+    font-size: 1.4rem;
+    letter-spacing: 0.2rem;
+  }
+  
+  h3 {
+    font-size: 1.2rem;
+  }
+  
+  /* Оптимизация анимаций для мобильных */
+  .pulse, .shake, .float, .rotate {
+    animation: none;
+  }
+  
+  .glow {
+    animation: none;
+    box-shadow: 0 0 10px rgba(79, 172, 254, 0.6);
+  }
+}
+
+/* Дополнительные улучшения для очень маленьких экранов */
+@media screen and (max-width: 480px) {
+  /* Ещё более компактные стили */
+  #header .content .inner {
+    padding: 1rem 0;
+  }
+  
+  .contact-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .contact-icon {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+  
+  .cta-card {
+    padding: 1.5rem 1rem;
+  }
+  
+  /* Улучшение кнопок */
+  .elegant-button {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  /* Уменьшение отступов */
+  .symptoms-clean, .advantages-grid {
+    gap: 1rem;
+  }
+}
+
+/* Плавные переходы для мобильных */
+@media (hover: hover) {
+  /* Стили только для устройств с hover (не сенсорные) */
+}
+
+@media (pointer: coarse) {
+  /* Специальные стили для сенсорных устройств */
+  button, a {
+    min-height: 44px; /* Рекомендованный размер для касаний */
+    min-width: 44px;
+  }
+  
+  /* Увеличение зоны клика */
+  .symptom-item-clean, .contact-card {
+    padding: 1.2rem;
+  }
+}
