@@ -6,11 +6,98 @@
 -->
 <html>
 	<head>
-		<title></title>
+		<title>ООО "ДК Дизель" - ремонт топливных форсунок</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			/* Добавляем стили для плавной прокрутки */
+			html {
+				scroll-behavior: smooth;
+			}
+			
+			/* Стили для одностраничного layout */
+			#main {
+				display: block !important;
+				opacity: 1 !important;
+				visibility: visible !important;
+				position: relative;
+				z-index: 1;
+			}
+			
+			#main > article {
+				display: block;
+				padding: 3rem 2rem;
+				margin: 0 auto;
+				max-width: 1000px;
+				background: rgba(40, 40, 40, 0.9);
+				border-radius: 4px;
+				margin-bottom: 2rem;
+			}
+			
+			/* Убираем переключатель статей */
+			#main > article:not(:first-child) {
+				display: block !important;
+			}
+			
+			/* Адаптация меню для одностраничного сайта */
+			#header nav ul {
+				position: fixed;
+				bottom: 20px;
+				left: 50%;
+				transform: translateX(-50%);
+				background: rgba(0, 0, 0, 0.7);
+				padding: 10px;
+				border-radius: 50px;
+				z-index: 1000;
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				max-width: 90%;
+			}
+			
+			#header nav ul li {
+				margin: 5px;
+			}
+			
+			/* Кнопка "Наверх" */
+			.back-to-top {
+				position: fixed;
+				bottom: 80px;
+				right: 20px;
+				background: rgba(0, 0, 0, 0.7);
+				color: white;
+				width: 50px;
+				height: 50px;
+				border-radius: 50%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				z-index: 1000;
+				cursor: pointer;
+				transition: all 0.3s;
+			}
+			
+			.back-to-top:hover {
+				background: #4e4e4e;
+			}
+			
+			/* Анимация при скролле */
+			[data-aos] {
+				transition: opacity 0.5s ease, transform 0.5s ease;
+			}
+			
+			[data-aos="fade-up"] {
+				opacity: 0;
+				transform: translateY(20px);
+			}
+			
+			[data-aos].aos-animate {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		</style>
 	</head>
 	<body class="is-preload">
 
@@ -34,145 +121,150 @@
 								<li><a href="#intro">Услуги</a></li>
 								<li><a href="#work">Полезно</a></li>
 								<li><a href="#about">Качество</a></li>
-								<li><a href="#about">Контакты</a></li>
-								<li><a href="#contact">О нас</a></li>
-								<!--<li><a href="#elements">Elements</a></li>-->
+								<li><a href="#contacts">Контакты</a></li>
+								<li><a href="#form">Запись</a></li>
 							</ul>
 						</nav>
 					</header>
 				
-				
+				<!-- Кнопка "Наверх" -->
+				<div class="back-to-top" title="Наверх">
+					<i class="fas fa-arrow-up"></i>
+				</div>
 
 				<!-- Main -->
 					<div id="main">
-
+						<!-- Услуги -->
 						<article id="intro">
 							<h2 class="major">Наши услуги</h2>
 							
 							<div class="services-accordion">
-								<div class="service-card">
+								<div class="service-card" data-aos="fade-up">
 									<div class="service-header">
 										<h3>Диагностика форсунок на стенде от 10p</h3>
 										<span class="toggle-icon">+</span>
 									</div>
 									<div class="service-content">
 										<p>Стенд не просто проверяет, работает ли форсунка, а точно определяет её техническое состояние и соответствие заводским характеристикам, что критически важно для эффективной и экологичной работы дизельного двигателя.</p>
-										<a href="#contact" class="button small">Записаться</a>
+										<a href="#form" class="button small">Записаться</a>
 									</div>
 								</div>
 
-								<div class="service-card">
+								<div class="service-card" data-aos="fade-up" data-aos-delay="100">
 									<div class="service-header">
 										<h3>Кодировка форсунок на стенде от 30p</h3>
 										<span class="toggle-icon">+</span>
 									</div>
 									<div class="service-content">
 										<p>Присвоение кода форсунке, в ходе которой измеряется её фактическая топливоподача и рассчитывается индивидуальный поправочный коэффициент. На основе этих данных присваивается уникальный калибровочный код, который позволяет электронному блоку управления точно контролировать впрыск топлива для обеспечения стабильной и экономичной работы двигателя.</p>
-										<a href="#contact" class="button small">Записаться</a>
+										<a href="#form" class="button small">Записаться</a>
 									</div>
 								</div>
 
-								<div class="service-card">
+								<div class="service-card" data-aos="fade-up" data-aos-delay="200">
 									<div class="service-header">
 										<h3>ремонт механической форсунки от 20р</h3>
 										<span class="toggle-icon">+</span>
 									</div>
 									<div class="service-content">
 										<p>Диагностика, разборка, дефектовка, чистка, сборка и регулировка, тестирование на герметичность</p>
-										<a href="#contact" class="button small">Записаться</a>
+										<a href="#form" class="button small">Записаться</a>
 									</div>
 								</div>
 
-								<div class="service-card">
+								<div class="service-card" data-aos="fade-up" data-aos-delay="300">
 									<div class="service-header">
 										<h3>Ремонт форсунок от 120p</h3>
 										<span class="toggle-icon">+</span>
 									</div>
 									<div class="service-content">
 										<p>Разборка и очистка форсунки, замена изношенных компонентов, сборка и регулировка, проверка на стенде.</p>
-										<a href="#contact" class="button small">Записаться</a>
+										<a href="#form" class="button small">Записаться</a>
 									</div>
 								</div>
 
-								<div class="service-card">
+								<div class="service-card" data-aos="fade-up" data-aos-delay="400">
 									<div class="service-header">
 										<h3>Снятие и установка форсунок от 160p</h3>
 										<span class="toggle-icon">+</span>
 									</div>
 									<div class="service-content">
 										<p>Предварительная диагностика состояния форсунок, демонтаж старых форсунок с сохранением целостности узлов, чистка колодцев, установка новых или отремонтированных форсунок, проверка герметичности соединений.</p>
-										<a href="#contact" class="button small">Записаться</a>
+										<a href="#form" class="button small">Записаться</a>
 									</div>
 								</div>
 							</div>
 						</article>
 
-						<!-- Work -->
+						<!-- Признаки неисправности -->
 						<article id="work">
-						<h2 class="major">Признаки неисправности</h2>
-						
-						<div class="symptoms-clean">
-							<div class="symptom-item-clean">
-								<div class="symptom-icon"><i class="fas fa-tachometer-alt"></i></div>
-								<h3>Неустойчивая работа двигателя</h3>
-								<p>Двигатель работает неровно на холостых оборотах, возможны провалы и рывки.</p>
+							<h2 class="major">Признаки неисправности</h2>
+							
+							<div class="symptoms-clean">
+								<div class="symptom-item-clean" data-aos="fade-up">
+									<div class="symptom-icon"><i class="fas fa-tachometer-alt"></i></div>
+									<h3>Неустойчивая работа двигателя</h3>
+									<p>Двигатель работает неровно на холостых оборотах, возможны провалы и рывки.</p>
+								</div>
+								
+								<div class="symptom-item-clean" data-aos="fade-up" data-aos-delay="100">
+									<div class="symptom-icon"><i class="fas fa-gas-pump"></i></div>
+									<h3>Повышенный расход топлива</h3>
+									<p>Форсунка может "лить" топливо — подавать его в избыточном количестве.</p>
+								</div>
+								
+								<div class="symptom-item-clean" data-aos="fade-up" data-aos-delay="200">
+									<div class="symptom-icon"><i class="fas fa-tachometer-alt"></i></div>
+									<h3>Потеря мощности</h3>
+									<p>Недостаточное давление впрыска приводит к снижению КПД двигателя.</p>
+								</div>
+								
+								<div class="symptom-item-clean" data-aos="fade-up" data-aos-delay="300">
+									<div class="symptom-icon"><i class="fas fa-cogs"></i></div>
+									<h3>Двигатель троит</h3>
+									<p>Двигатель работает не на всех цилиндрах, ощущается вибрация и потеря мощности.</p>
+								</div>
+								
+								<div class="symptom-item-clean" data-aos="fade-up" data-aos-delay="400">
+									<div class="symptom-icon"><i class="fas fa-smog"></i></div>
+									<h3>Черный или сизый дым</h3>
+									<p>Признак неполного сгорания топлива из-за нарушения распыления через форсунку.</p>
+								</div>
+								
+								<div class="symptom-item-clean" data-aos="fade-up" data-aos-delay="500">
+									<div class="symptom-icon"><i class="fas fa-volume-up"></i></div>
+									<h3>Нестандартные звуки</h3>
+									<p>Стук, щелчки, неравномерное горение топлива в цилиндрах.</p>
+								</div>
+								
+								<div class="symptom-item-clean" data-aos="fade-up" data-aos-delay="600">
+									<div class="symptom-icon"><i class="fas fa-wave-square"></i></div>
+									<h3>Плавают обороты</h3>
+									<p>Обороты двигателя самопроизвольно меняются без воздействия на педаль газа.</p>
+								</div>
+								
+								<div class="symptom-item-clean" data-aos="fade-up" data-aos-delay="700">
+									<div class="symptom-icon"><i class="fas fa-car-battery"></i></div>
+									<h3>Затруднённый запуск</h3>
+									<p>Особенно в холодную погоду, может быть связан с плохим впрыском топлива.</p>
+								</div>
+								
+								<div class="symptom-item-clean" data-aos="fade-up" data-aos-delay="800">
+									<div class="symptom-icon"><i class="fas fa-fire"></i></div>
+									<h3>Увеличенный выброс сажи</h3>
+									<p>Наличие нагара на свечах накаливания и в камере сгорания.</p>
+								</div>
 							</div>
 							
-							<div class="symptom-item-clean">
-								<div class="symptom-icon"><i class="fas fa-gas-pump"></i></div>
-								<h3>Повышенный расход топлива</h3>
-								<p>Форсунка может "лить" топливо — подавать его в избыточном количестве.</p>
+							<div class="text-center" style="margin-top: 2rem;" data-aos="fade-up">
+								<a href="#form" class="elegant-button">
+									<span class="button-icon"><i class="fas fa-calendar-check"></i></span>
+									<span class="button-text">Записаться на диагностику</span>
+								</a>
 							</div>
-							
-							<div class="symptom-item-clean">
-								<div class="symptom-icon"><i class="fas fa-tachometer-alt"></i></div>
-								<h3>Потеря мощности</h3>
-								<p>Недостаточное давление впрыска приводит к снижению КПД двигателя.</p>
-							</div>
-							
-							<div class="symptom-item-clean">
-								<div class="symptom-icon"><i class="fas fa-cogs"></i></div>
-								<h3>Двигатель троит</h3>
-								<p>Двигатель работает не на всех цилиндрах, ощущается вибрация и потеря мощности.</p>
-							</div>
-							
-							<div class="symptom-item-clean">
-								<div class="symptom-icon"><i class="fas fa-smog"></i></div>
-								<h3>Черный или сизый дым</h3>
-								<p>Признак неполного сгорания топлива из-за нарушения распыления через форсунку.</p>
-							</div>
-							
-							<div class="symptom-item-clean">
-								<div class="symptom-icon"><i class="fas fa-volume-up"></i></div>
-								<h3>Нестандартные звуки</h3>
-								<p>Стук, щелчки, неравномерное горение топлива в цилиндрах.</p>
-							</div>
-							
-							<div class="symptom-item-clean">
-								<div class="symptom-icon"><i class="fas fa-wave-square"></i></div>
-								<h3>Плавают обороты</h3>
-								<p>Обороты двигателя самопроизвольно меняются без воздействия на педаль газа.</p>
-							</div>
-							
-							<div class="symptom-item-clean">
-								<div class="symptom-icon"><i class="fas fa-car-battery"></i></div>
-								<h3>Затруднённый запуск</h3>
-								<p>Особенно в холодную погоду, может быть связан с плохим впрыском топлива.</p>
-							</div>
-							
-							<div class="symptom-item-clean">
-								<div class="symptom-icon"><i class="fas fa-fire"></i></div>
-								<h3>Увеличенный выброс сажи</h3>
-								<p>Наличие нагара на свечах накаливания и в камере сгорания.</p>
-							</div>
-						</div>
-						
-						<a href="#contact" class="elegant-button">
-    						<span class="button-icon"><i class="fas fa-calendar-check"></i></span>
-    						<span class="button-text">Записаться на диагностику</span>
-						</a>
-					</article>
+						</article>
 
+						<!-- Наши преимущества -->
 						<article id="about">
 							<h2 class="major">Наши преимущества</h2>
 							
@@ -290,379 +382,141 @@
 							</div>
 						</article>
 
-						<article id="contact">
-						<h2 class="major">Контакты</h2>
-						
-						<div class="contact-container">
-							<!-- Контактная информация с анимированными иконками -->
-							<div class="contact-info" data-aos="fade-right">
-								<div class="contact-card">
-									<div class="contact-icon pulse">
-										<i class="fas fa-map-marker-alt"></i>
+						<!-- Контакты -->
+						<article id="contacts">
+							<h2 class="major">Контакты</h2>
+							
+							<div class="contact-container">
+								<!-- Контактная информация с анимированными иконками -->
+								<div class="contact-info" data-aos="fade-right">
+									<div class="contact-card">
+										<div class="contact-icon pulse">
+											<i class="fas fa-map-marker-alt"></i>
+										</div>
+										<div class="contact-details">
+											<h3>Адрес</h3>
+											<p>г. Минск, ул. Шаранговича д. 7 корп. 3</p>
+										</div>
 									</div>
-									<div class="contact-details">
-										<h3>Адрес</h3>
-										<p>г. Минск, ул. Шаранговича д. 7 корп. 3</p>
+									
+									<div class="contact-card">
+										<div class="contact-icon shake">
+											<i class="fas fa-phone-alt"></i>
+										</div>
+										<div class="contact-details">
+											<h3>Телефоны</h3>
+											<p>+375 (29) 144-00-40<br>+375 (44) 733-03-00</p>
+											<div class="call-buttons">
+												<a href="tel:+375291440040" class="call-button">
+													<i class="fas fa-phone"></i> Позвонить
+												</a>
+											</div>
+										</div>
 									</div>
-								</div>
-								
-								<div class="contact-card">
-									<div class="contact-icon shake">
-										<i class="fas fa-phone-alt"></i>
-									</div>
-									<div class="contact-details">
-										<h3>Телефоны</h3>
-										<p>+375 (29) 144-00-40<br>+375 (44) 733-03-00</p>
-										<div class="call-buttons">
-											<a href="tel:+375291440040" class="call-button">
-												<i class="fas fa-phone"></i> Позвонить
+									
+									<div class="contact-card">
+										<div class="contact-icon float">
+											<i class="fas fa-envelope"></i>
+										</div>
+										<div class="contact-details">
+											<h3>Email</h3>
+											<p>dkdisel@mail.ru</p>
+											<a href="mailto:dkdisel@mail.ru" class="email-button">
+												<i class="fas fa-paper-plane"></i> Написать
 											</a>
 										</div>
 									</div>
-								</div>
-								
-								<div class="contact-card">
-									<div class="contact-icon float">
-										<i class="fas fa-envelope"></i>
-									</div>
-									<div class="contact-details">
-										<h3>Email</h3>
-										<p>dkdisel@mail.ru</p>
-										<a href="mailto:dkdisel@mail.ru" class="email-button">
-											<i class="fas fa-paper-plane"></i> Написать
-										</a>
-									</div>
-								</div>
-								
-								<div class="contact-card">
-									<div class="contact-icon rotate">
-										<i class="fas fa-clock"></i>
-									</div>
-									<div class="contact-details">
-										<h3>Режим работы</h3>
-										<p>Пн-Пт: 9:00 - 18:00<br>Сб: 10:00 - 15:00<br>Вс: выходной</p>
-										<div class="working-hours-bar">
-											<div class="hours-progress" data-day="mon-fri"></div>
+									
+									<div class="contact-card">
+										<div class="contact-icon rotate">
+											<i class="fas fa-clock"></i>
+										</div>
+										<div class="contact-details">
+											<h3>Режим работы</h3>
+											<p>Пн-Пт: 9:00 - 18:00<br>Сб: 10:00 - 15:00<br>Вс: выходной</p>
+											<div class="working-hours-bar">
+												<div class="hours-progress" data-day="mon-fri"></div>
+											</div>
 										</div>
 									</div>
 								</div>
-							</div>
-							
-							<!-- Интерактивная карта -->
-							<div class="contact-map" data-aos="fade-left">
-								<div class="map-container">
-									<iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A1a2b3c4d5e6f7g8h9i0j&amp;lang=ru_RU&amp;scroll=false" 
-											frameborder="0" allowfullscreen="true"></iframe>
-									<div class="map-overlay">
-										<h3>Как проехать</h3>
-										<p>Мы находимся в 5 минутах от ст.м. Кунцевщина. Для автомобилей есть удобная парковка перед зданием.</p>
-										<div class="transport-icons">
-											<div class="transport-icon metro">
-												<i class="fas fa-subway"></i>
-												<span>5 мин</span>
-											</div>
-											<div class="transport-icon car">
-												<i class="fas fa-car"></i>
-												<span>Парковка</span>
+								
+								<!-- Интерактивная карта -->
+								<div class="contact-map" data-aos="fade-left">
+									<div class="map-container">
+										<iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A1a2b3c4d5e6f7g8h9i0j&amp;lang=ru_RU&amp;scroll=false" 
+												frameborder="0" allowfullscreen="true"></iframe>
+										<div class="map-overlay">
+											<h3>Как проехать</h3>
+											<p>Мы находимся в 5 минутах от ст.м. Кунцевщина. Для автомобилей есть удобная парковка перед зданием.</p>
+											<div class="transport-icons">
+												<div class="transport-icon metro">
+													<i class="fas fa-subway"></i>
+													<span>5 мин</span>
+												</div>
+												<div class="transport-icon car">
+													<i class="fas fa-car"></i>
+													<span>Парковка</span>
+												</div>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-						
-						<!-- Кнопка записи -->
-						<div class="contact-cta" data-aos="fade-up">
-							<div class="cta-card glow">
-								<h3>Записаться на диагностику</h3>
-								<p>Оставьте заявку и мы подберем удобное время</p>
-								<a href="#form" class="cta-button">
-									<span class="button-icon"><i class="fas fa-calendar-alt"></i></span>
-									<span class="button-text">Онлайн-запись</span>
-									<span class="button-arrow"><i class="fas fa-chevron-right"></i></span>
-								</a>
-							</div>
-						</div>
-					</article>
+						</article>
 
-						<!-- Contact -->
-							<article id="contact">
-								<h2 class="major">Contact</h2>
-								<form method="post" action="#">
-									<div class="fields">
-										<div class="field half">
-											<label for="name">Name</label>
-											<input type="text" name="name" id="name" />
-										</div>
-										<div class="field half">
-											<label for="email">Email</label>
-											<input type="text" name="email" id="email" />
-										</div>
-										<div class="field">
-											<label for="message">Message</label>
-											<textarea name="message" id="message" rows="4"></textarea>
-										</div>
+						<!-- Форма записи -->
+						<article id="form">
+							<h2 class="major">Онлайн-запись</h2>
+							<form method="post" action="#" data-aos="fade-up">
+								<div class="fields">
+									<div class="field half">
+										<label for="name">Ваше имя</label>
+										<input type="text" name="name" id="name" required />
 									</div>
-									<ul class="actions">
-										<li><input type="submit" value="Send Message" class="primary" /></li>
-										<li><input type="reset" value="Reset" /></li>
-									</ul>
-								</form>
-								<ul class="icons">
-									<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+									<div class="field half">
+										<label for="phone">Телефон</label>
+										<input type="tel" name="phone" id="phone" required />
+									</div>
+									<div class="field">
+										<label for="service">Услуга</label>
+										<select name="service" id="service">
+											<option value="diagnostics">Диагностика форсунок</option>
+											<option value="coding">Кодировка форсунок</option>
+											<option value="repair-mech">Ремонт механической форсунки</option>
+											<option value="repair">Ремонт форсунок</option>
+											<option value="install">Снятие и установка форсунок</option>
+										</select>
+									</div>
+									<div class="field">
+										<label for="date">Желаемая дата</label>
+										<input type="date" name="date" id="date" required />
+									</div>
+									<div class="field">
+										<label for="message">Дополнительная информация</label>
+										<textarea name="message" id="message" rows="4"></textarea>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><input type="submit" value="Отправить заявку" class="primary" /></li>
+									<li><input type="reset" value="Очистить" /></li>
 								</ul>
-							</article>
-
-						<!-- Elements -->
-							<article id="elements">
-								<h2 class="major">Elements</h2>
-
-								<section>
-									<h3 class="major">Text</h3>
-									<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
-									This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
-									This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
-									<hr />
-									<h2>Heading Level 2</h2>
-									<h3>Heading Level 3</h3>
-									<h4>Heading Level 4</h4>
-									<h5>Heading Level 5</h5>
-									<h6>Heading Level 6</h6>
-									<hr />
-									<h4>Blockquote</h4>
-									<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
-									<h4>Preformatted</h4>
-									<pre><code>i = 0;
-
-while (!deck.isInOrder()) {
-    print 'Iteration ' + i;
-    deck.shuffle();
-    i++;
-}
-
-print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
-								</section>
-
-								<section>
-									<h3 class="major">Lists</h3>
-
-									<h4>Unordered</h4>
-									<ul>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Sagittis adipiscing.</li>
-										<li>Felis enim feugiat.</li>
-									</ul>
-
-									<h4>Alternate</h4>
-									<ul class="alt">
-										<li>Dolor pulvinar etiam.</li>
-										<li>Sagittis adipiscing.</li>
-										<li>Felis enim feugiat.</li>
-									</ul>
-
-									<h4>Ordered</h4>
-									<ol>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Etiam vel felis viverra.</li>
-										<li>Felis enim feugiat.</li>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Etiam vel felis lorem.</li>
-										<li>Felis enim et feugiat.</li>
-									</ol>
-									<h4>Icons</h4>
-									<ul class="icons">
-										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-									</ul>
-
-									<h4>Actions</h4>
-									<ul class="actions">
-										<li><a href="#" class="button primary">Default</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-									<ul class="actions stacked">
-										<li><a href="#" class="button primary">Default</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-								</section>
-
-								<section>
-									<h3 class="major">Table</h3>
-									<h4>Default</h4>
-									<div class="table-wrapper">
-										<table>
-											<thead>
-												<tr>
-													<th>Name</th>
-													<th>Description</th>
-													<th>Price</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Item One</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Two</td>
-													<td>Vis ac commodo adipiscing arcu aliquet.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Three</td>
-													<td> Morbi faucibus arcu accumsan lorem.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Four</td>
-													<td>Vitae integer tempus condimentum.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Five</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-											</tbody>
-											<tfoot>
-												<tr>
-													<td colspan="2"></td>
-													<td>100.00</td>
-												</tr>
-											</tfoot>
-										</table>
-									</div>
-
-									<h4>Alternate</h4>
-									<div class="table-wrapper">
-										<table class="alt">
-											<thead>
-												<tr>
-													<th>Name</th>
-													<th>Description</th>
-													<th>Price</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Item One</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Two</td>
-													<td>Vis ac commodo adipiscing arcu aliquet.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Three</td>
-													<td> Morbi faucibus arcu accumsan lorem.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Four</td>
-													<td>Vitae integer tempus condimentum.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Five</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-											</tbody>
-											<tfoot>
-												<tr>
-													<td colspan="2"></td>
-													<td>100.00</td>
-												</tr>
-											</tfoot>
-										</table>
-									</div>
-								</section>
-
-								<section>
-									<h3 class="major">Buttons</h3>
-									<ul class="actions">
-										<li><a href="#" class="button primary">Primary</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-									<ul class="actions">
-										<li><a href="#" class="button">Default</a></li>
-										<li><a href="#" class="button small">Small</a></li>
-									</ul>
-									<ul class="actions">
-										<li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
-										<li><a href="#" class="button icon solid fa-download">Icon</a></li>
-									</ul>
-									<ul class="actions">
-										<li><span class="button primary disabled">Disabled</span></li>
-										<li><span class="button disabled">Disabled</span></li>
-									</ul>
-								</section>
-
-								<section>
-									<h3 class="major">Form</h3>
-									<form method="post" action="#">
-										<div class="fields">
-											<div class="field half">
-												<label for="demo-name">Name</label>
-												<input type="text" name="demo-name" id="demo-name" value="" placeholder="Jane Doe" />
-											</div>
-											<div class="field half">
-												<label for="demo-email">Email</label>
-												<input type="email" name="demo-email" id="demo-email" value="" placeholder="jane@untitled.tld" />
-											</div>
-											<div class="field">
-												<label for="demo-category">Category</label>
-												<select name="demo-category" id="demo-category">
-													<option value="">-</option>
-													<option value="1">Manufacturing</option>
-													<option value="1">Shipping</option>
-													<option value="1">Administration</option>
-													<option value="1">Human Resources</option>
-												</select>
-											</div>
-											<div class="field half">
-												<input type="radio" id="demo-priority-low" name="demo-priority" checked>
-												<label for="demo-priority-low">Low</label>
-											</div>
-											<div class="field half">
-												<input type="radio" id="demo-priority-high" name="demo-priority">
-												<label for="demo-priority-high">High</label>
-											</div>
-											<div class="field half">
-												<input type="checkbox" id="demo-copy" name="demo-copy">
-												<label for="demo-copy">Email me a copy</label>
-											</div>
-											<div class="field half">
-												<input type="checkbox" id="demo-human" name="demo-human" checked>
-												<label for="demo-human">Not a robot</label>
-											</div>
-											<div class="field">
-												<label for="demo-message">Message</label>
-												<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
-											</div>
-										</div>
-										<ul class="actions">
-											<li><input type="submit" value="Send Message" class="primary" /></li>
-											<li><input type="reset" value="Reset" /></li>
-										</ul>
-									</form>
-								</section>
-
-							</article>
-
+							</form>
+							
+							<div class="form-success" data-aos="fade-up" style="display: none;">
+								<div class="success-icon">
+									<i class="fas fa-check-circle"></i>
+								</div>
+								<h3>Спасибо за заявку!</h3>
+								<p>Мы свяжемся с вами в ближайшее время для подтверждения записи.</p>
+								<a href="#contacts" class="button">Наши контакты</a>
+							</div>
+						</article>
 					</div>
 
 				<!-- Footer -->
 					<footer id="footer">
-						<p class="copyright"> <a href="https://html5up.net"></a></p>
+						<p class="copyright">&copy; ООО "ДК Дизель". Все права защищены.</p>
 					</footer>
 
 			</div>
@@ -676,6 +530,82 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			
+			<script>
+				// Плавная прокрутка для всех ссылок с якорями
+				$(document).on('click', 'a[href^="#"]', function (event) {
+					event.preventDefault();
+					
+					$('html, body').animate({
+						scrollTop: $($.attr(this, 'href')).offset().top - 20
+					}, 500);
+				});
+				
+				// Кнопка "Наверх"
+				$(window).scroll(function() {
+					if ($(this).scrollTop() > 300) {
+						$('.back-to-top').fadeIn();
+					} else {
+						$('.back-to-top').fadeOut();
+					}
+				});
+				
+				$('.back-to-top').click(function() {
+					$('html, body').animate({scrollTop: 0}, 500);
+					return false;
+				});
+				
+				// Простая реализация анимаций при скролле
+				$(window).on('load scroll', function() {
+					$('[data-aos]').each(function() {
+						if ($(this).isInViewport()) {
+							$(this).addClass('aos-animate');
+						}
+					});
+				});
+				
+				// Проверка, находится ли элемент в области видимости
+				$.fn.isInViewport = function() {
+					var elementTop = $(this).offset().top;
+					var elementBottom = elementTop + $(this).outerHeight();
+					var viewportTop = $(window).scrollTop();
+					var viewportBottom = viewportTop + $(window).height();
+					return elementBottom > viewportTop && elementTop < viewportBottom;
+				};
+				
+				// Обработка формы
+				$('form').submit(function(e) {
+					e.preventDefault();
+					$(this).hide();
+					$('.form-success').fadeIn();
+				});
+				
+				// Аккордеон для услуг
+				$('.service-header').click(function() {
+					$(this).parent().toggleClass('active');
+					$(this).find('.toggle-icon').text($(this).parent().hasClass('active') ? '-' : '+');
+					$(this).siblings('.service-content').slideToggle();
+				});
+				
+				// Слайдер отзывов
+				let currentTestimonial = 0;
+				const testimonials = $('.testimonial');
+				
+				function showTestimonial(index) {
+					testimonials.removeClass('active');
+					$(testimonials[index]).addClass('active');
+				}
+				
+				$('.next-testimonial').click(function() {
+					currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+					showTestimonial(currentTestimonial);
+				});
+				
+				$('.prev-testimonial').click(function() {
+					currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
+					showTestimonial(currentTestimonial);
+				});
+			</script>
 
 	</body>
 </html>
